@@ -9,12 +9,13 @@ public class GreetEchoExit {
                 "     What can I do for you?\n" +
                 "    ____________________________________________________________\n");
         String input;
+        String bye = "bye";
         do{
             input = in.nextLine();
             System.out.println("    ____________________________________________________________\n" +
                     "    " + input + "\n" +
                     "    ____________________________________________________________");
-        }while(!input.equals("bye"));{
+        }while(!input.equals(bye));{
             System.out.println("    ____________________________________________________________\n" +
                 "    Bye. Hope to see you again soon!\n" +
                 "    ____________________________________________________________\n");
