@@ -13,6 +13,7 @@ public class GreetEchoExit {
 
         //create input
         String input;
+        String pattern = "(^done)(\\s)(\\d+$*)";
 
         AddList addList = new AddList();
 
@@ -23,10 +24,14 @@ public class GreetEchoExit {
                 goodBye.goodbye();
                 break;
             } else if (input.equals("list")) {
-                addList.PrintList();
+                addList.PrintList(input);
+            } else if (input.matches(pattern)){
+                addList.NumberExtra(pattern);
+                //int taskNumber = Integer.parseInt(seq);
+                addList.MarkDone(1);
             }
 
-            if (!input.equals("list")){
+            if (!input.equals("list") && !input.matches(pattern)){
                 addList.StoreList(input);
                 addList.printOutput(input);
             }
