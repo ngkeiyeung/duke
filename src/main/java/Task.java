@@ -1,41 +1,38 @@
-import java.util.Scanner;
+
 
 public class Task {
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
+    public String description;
+    public boolean isCompleted;
+    /**
+     * The purpose of new task description is
+     *  Initializing the new task and mark the progress as incomplete.
+     */
+    public Task(String description) {
+        this.description = description;
+        this.isCompleted = false; //default is false
+    }
 
-        // Welcome message
-        AddList welcome = new AddList();
-        welcome.welcome();
+    /**
+     * Return the String type of task
+     *
+     * @return String       Return the task description
+     */
+    public String getTaskDescription(){
+        return "[" + getTaskStatus() + "]" + this.description;
+    }
 
-        // Goodbye message
-        AddList goodBye = new AddList();
+    /**
+     * Mark completed task as completed status
+     *
+      */
+    public void markCompleted() { isCompleted = true; }
 
-        //create input
-        String input;
-        String pattern = "(^done)(\\s)(\\d+$*)";
-
-        AddList addList = new AddList();
-
-        while (true){
-            input = in.nextLine();
-
-            if (input.equals("bye")) {
-                goodBye.goodbye();
-                break;
-            } else if (input.equals("list")) {
-                addList.PrintList(input);
-            } else if (input.matches(pattern)){
-                addList.NumberExtra(pattern);
-                //int taskNumber = Integer.parseInt(seq);
-                addList.MarkDone(1);
-            }
-
-            if (!input.equals("list") && !input.matches(pattern)){
-                addList.StoreList(input);
-                addList.printOutput(input);
-            }
-        }
-
+    /**
+     * Return the task status
+     *
+     * @return String       Return the task status, Either "Yes" or "No"
+     */
+    public String getTaskStatus(){
+        return (isCompleted ? "X" : " ");
     }
 }
