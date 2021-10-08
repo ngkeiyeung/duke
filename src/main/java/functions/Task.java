@@ -1,4 +1,4 @@
-
+package functions;
 
 public class Task {
     public String description;
@@ -25,7 +25,9 @@ public class Task {
      * Mark completed task as completed status
      *
       */
-    public void markCompleted() { isCompleted = true; }
+    public void markCompleted() {
+        isCompleted = true;
+    }
 
     /**
      * Return the task status
