@@ -1,8 +1,10 @@
-package functions;
+package project.functions;
 
 public class Task {
     public String description;
     public boolean isCompleted;
+    public String dateTimeFormat = "DD/MM/YYYY HHmm";
+
     /**
      * The purpose of new task description is
      *  Initializing the new task and mark the progress as incomplete.

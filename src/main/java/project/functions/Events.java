@@ -1,4 +1,4 @@
-package functions;
+package project.functions;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -46,5 +46,10 @@ public class Events extends Task {
     @Override
     public String getTaskDescription() {
         return "[E]" + getTaskDescription();
+    }
+
+    public String dateFormat(LocalDateTime dateTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy HHmm");
+        return dateTime.format(formatter);
     }
 }
