@@ -1,11 +1,13 @@
-package functions;
+package project.functions;
 
+import project.Exception.Exception;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class Deadlines extends Task {
     public LocalDateTime timing;
-    private String dateTimeFormat = "DD/MM/YYYY HHmm";
+    private String deleted = "[D]";
 
     /**
      * The purpose of new task description is
@@ -25,7 +27,7 @@ public class Deadlines extends Task {
      */
     @Override
     public String getTaskDescription() {
-        return "[D]" + getTaskDescription();
+        return deleted + getTaskDescription();
     }
 
     /**
@@ -40,10 +42,10 @@ public class Deadlines extends Task {
     /**
      * To convert date and time as string
      *
-     * @param timimg
+     * @param time
      * @return String
      */
-    public String dateToString(LocalDateTime timimg) {
+    public String dateFormat(LocalDateTime time) {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);
         return timing.format(dateFormat);
     }
