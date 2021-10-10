@@ -1,6 +1,4 @@
-package functions;
-
-import functions.Task;
+package project.functions;
 
 public class Todos extends Task {
 
@@ -20,7 +18,7 @@ public class Todos extends Task {
      */
     @Override
     public String getTaskDescription() {
-        return "[" + "T" + "]" + super.getTaskDescription();
+        return "[T]" + super.getTaskDescription();
     }
 
 }

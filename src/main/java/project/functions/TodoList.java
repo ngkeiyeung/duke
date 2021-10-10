@@ -1,6 +1,4 @@
-package functions;
-
-import functions.Task;
+package project.functions;
 
 import java.util.ArrayList;
 
@@ -12,8 +10,8 @@ public class TodoList {
      *
      * @return int
      */
-    public static Task taskSize(int description) {
-        return todoList.get(description);
+    public int length() {
+        return todoList.size();
     }
 
     /**
@@ -24,6 +22,8 @@ public class TodoList {
     public TodoList() {
         this.todoList = new ArrayList<>();
     }
+
+
 
     /**
      * Creating a specified type of new todolist
@@ -51,7 +51,7 @@ public class TodoList {
      * @param description
      * @return String
      */
-    public static Task toDelete(int description) {
+    public Task toDelete(int description) {
         return todoList.remove(description);
     }
 
@@ -61,7 +61,7 @@ public class TodoList {
      * @param description
      * @return String
      */
-    public static Task getList(int description) {
+    public Task getList(int description) {
         return todoList.get(description);
     }
 
