@@ -1,4 +1,4 @@
-package TextContent;
+package project.TextContent;
 
 public class todo {
 }
