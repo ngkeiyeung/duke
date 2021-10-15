@@ -1,2 +1,4 @@
-package project.ui;public class ui {
+package project.ui;
+
+public class ui {
 }
