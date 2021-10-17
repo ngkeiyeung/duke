@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 public class Events extends Task {
     public LocalDateTime eventTime;
-    private String dateTimeFormat = "DD/MM/YYYY HHmm";
 
     /**
      * The purpose of new task description is
@@ -16,6 +15,18 @@ public class Events extends Task {
     public Events(String description, LocalDateTime eventTime) {
         super(description);
         this.eventTime = eventTime;
+    }
+
+
+
+    /**
+     * Return the deadline of the task
+     *
+     * @return
+     */
+    @Override
+    public String getTaskDescription() {
+        return "[E]" + getTaskDescription();
     }
 
     /**
@@ -30,26 +41,11 @@ public class Events extends Task {
     /**
      * To convert date and time as string
      *
-     * @param eventTime
+     * @param time
      * @return String
      */
-    public String dateToString(LocalDateTime eventTime) {
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);
-        return eventTime.format(dateFormat);
-    }
-
-    /**
-     * Return the deadline of the task
-     *
-     * @return
-     */
-    @Override
-    public String getTaskDescription() {
-        return "[E]" + getTaskDescription();
-    }
-
-    public String dateFormat(LocalDateTime dateTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy HHmm");
-        return dateTime.format(formatter);
+    public String dateFormat(LocalDateTime time) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimeFormat);
+        return time.format(formatter);
     }
 }

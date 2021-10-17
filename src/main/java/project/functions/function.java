@@ -1,10 +1,11 @@
 package project.functions;
 
-import java.io.IOException;
-import project.ui.ui;
 import project.storage.save;
+import project.ui.ui;
 
-public class function {
+import java.io.IOException;
+
+public abstract class function {
     public boolean isExit;
     public String description;
     public String empty = "";
@@ -48,8 +49,12 @@ public class function {
      * @throws Exception
      * @throws IOException
      */
-    public void warningMessage(TodoList todoList, ui ui, save storage) throws Exception, IOException {
+    public void exe(TodoList todoList, ui ui, save storage) throws Exception, IOException {
         throw new Exception("The function was not found. Please try again!");
     }
 
+    public String keyword(int word) {
+        String keyword = description.substring(word);
+        return keyword;
+    }
 }

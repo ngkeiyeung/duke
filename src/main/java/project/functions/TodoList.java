@@ -10,7 +10,7 @@ public class TodoList {
      *
      * @return int
      */
-    public int length() {
+    public static int length() {
         return todoList.size();
     }
 
@@ -36,6 +36,16 @@ public class TodoList {
     }
 
     /**
+     * to get a todolist
+     *
+     * @param description
+     * @return String
+     */
+    public static Task getList(int description) {
+        return todoList.get(description);
+    }
+
+    /**
      * Creating the new scope of todoList
      *
      * @param description       Adding the new task into the todoList
@@ -55,14 +65,5 @@ public class TodoList {
         return todoList.remove(description);
     }
 
-    /**
-     * to get a todolist
-     *
-     * @param description
-     * @return String
-     */
-    public Task getList(int description) {
-        return todoList.get(description);
-    }
 
 }

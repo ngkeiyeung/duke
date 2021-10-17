@@ -1,5 +1,7 @@
 package project.functions;
 
+import java.time.LocalDateTime;
+
 public class Task {
     public String description;
     public boolean isCompleted;
@@ -38,5 +40,9 @@ public class Task {
      */
     public String getTaskStatus(){
         return (isCompleted ? "X" : " ");
+    }
+
+    public LocalDateTime getDate() {
+        return null;
     }
 }
