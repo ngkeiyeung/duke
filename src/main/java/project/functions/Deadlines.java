@@ -1,12 +1,11 @@
 package project.functions;
 
-import project.Exception.Exception;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+
 
 public class Deadlines extends Task {
-    public LocalDateTime timing;
+    public LocalDateTime deadlineTime;
     private String deleted = "[D]";
 
     /**
@@ -15,9 +14,9 @@ public class Deadlines extends Task {
      *
      * @param description
      */
-    public Deadlines(String description, LocalDateTime timing) {
+    public Deadlines(String description, LocalDateTime deadlineTime) {
         super(description);
-        this.timing = timing;
+        this.deadlineTime = deadlineTime;
     }
 
     /**
@@ -35,8 +34,8 @@ public class Deadlines extends Task {
      *
      * @return String
      */
-    public LocalDateTime DateTime() {
-        return this.timing;
+    public LocalDateTime deadlineTime() {
+        return this.deadlineTime;
     }
 
     /**
@@ -47,7 +46,7 @@ public class Deadlines extends Task {
      */
     public String dateFormat(LocalDateTime time) {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);
-        return timing.format(dateFormat);
+        return time.format(dateFormat);
     }
 
 }
