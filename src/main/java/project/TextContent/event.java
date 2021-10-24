@@ -23,7 +23,7 @@ public class event extends function{
         super(isExit, description);
     }
 
-    private LocalDateTime stringFormat(String date) throws Exception {
+    public LocalDateTime stringFormat(String date) throws Exception {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimeFormat);
             return LocalDateTime.parse(date, formatter);
@@ -33,7 +33,7 @@ public class event extends function{
     }
 
     @Override
-    public void exe(TodoList todoList, ui ui, save storage) throws Exception {
+    public void exe(TodoList todoList, ui ui, save storage) throws java.lang.Exception {
         if (description.substring(5).equals(empty)) {
             throw new Exception("The description of event cannot be empty.");
         } else if (!description.contains("at")) {
@@ -49,7 +49,7 @@ public class event extends function{
                 + "\nNow you have "
                 + todoList.length()
                 + " in task list.");
-        storage.save();
+        storage.saveFile();
     }
 
 

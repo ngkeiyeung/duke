@@ -49,7 +49,7 @@ public abstract class function {
      * @throws Exception
      * @throws IOException
      */
-    public void exe(TodoList todoList, ui ui, save storage) throws Exception, IOException {
+    public void exe(TodoList todoList, ui ui, save storage) throws Exception {
         throw new Exception("The function was not found. Please try again!");
     }
 

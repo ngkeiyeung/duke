@@ -19,7 +19,7 @@ public class delete extends function {
         super(isExit, description);
     }
 
-    public void exe(TodoList todoList, ui ui, save storage) throws Exception {
+    public void exe(TodoList todoList, ui ui, save storage) throws java.lang.Exception {
         if(description.substring(7).equals(empty)){
             throw new Exception("Which task to delete?");
         }
@@ -28,8 +28,8 @@ public class delete extends function {
 
         ui.outputdisplay("Noted. I've removed this task:\n"
                 + "\t"
-                + todoList.getList(i).getTaskDescription();
+                + todoList.getList(i).getTaskDescription());
         todoList.toDelete(i);
-        storage.save();
+        storage.saveFile();
     }
 }

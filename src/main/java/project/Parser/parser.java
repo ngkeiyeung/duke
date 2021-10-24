@@ -5,7 +5,7 @@ import project.functions.function;
 
 
 public class parser {
-    public function Parser(String input) throws Exception {
+    public static function Parser(String input) throws Exception {
         String command;
         String commandList = input.split(" ")[0];
         command = commandList.toLowerCase();

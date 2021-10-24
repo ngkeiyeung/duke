@@ -29,7 +29,7 @@ public class deadline extends function{
     }
 
     @Override
-    public void exe (TodoList todoList, ui ui, save storage) throws Exception{
+    public void exe (TodoList todoList, ui ui, save storage) throws java.lang.Exception {
 
         if (description.substring(8).equals(empty)) {
             throw new Exception("The deadline cannot be null. Please re-enter the deadline");
@@ -46,7 +46,7 @@ public class deadline extends function{
                 + "\nNow you have "
                 + todoList.length()
                 + " in task list.");
-        storage.save();
+        storage.saveFile();
     }
 
 }

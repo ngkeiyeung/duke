@@ -5,8 +5,9 @@ import java.time.format.DateTimeFormatter;
 
 
 public class Deadlines extends Task {
-    public LocalDateTime deadlineTime;
+
     private String deleted = "[D]";
+
 
     /**
      * The purpose of new task description is

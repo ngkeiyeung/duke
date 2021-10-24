@@ -1,10 +1,12 @@
 package project.functions;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Task {
     public String description;
     public boolean isCompleted;
+    public LocalDateTime deadlineTime;
     public String dateTimeFormat = "DD/MM/YYYY HHmm";
 
     /**
@@ -44,5 +46,25 @@ public class Task {
 
     public LocalDateTime getDate() {
         return null;
+    }
+
+    /**
+     * To get the date and time
+     *
+     * @return String
+     */
+    public LocalDateTime deadlineTime() {
+        return this.deadlineTime;
+    }
+
+    /**
+     * To convert date and time as string
+     *
+     * @param time
+     * @return String
+     */
+    public String dateFormat(LocalDateTime time) {
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);
+        return time.format(dateFormat);
     }
 }

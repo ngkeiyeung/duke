@@ -17,8 +17,6 @@ public class Events extends Task {
         this.eventTime = eventTime;
     }
 
-
-
     /**
      * Return the deadline of the task
      *
