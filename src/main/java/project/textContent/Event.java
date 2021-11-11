@@ -1,17 +1,17 @@
-package project.TextContent;
+package project.textContent;
 
-import project.Exception.Exception;
+import project.exception.Exception;
 import project.functions.Events;
 import project.functions.TodoList;
-import project.functions.function;
-import project.storage.save;
-import project.ui.ui;
+import project.functions.Function;
+import project.storage.Save;
+import project.ui.Ui;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class event extends function{
+public class Event extends Function {
     public Events events;
     /**
      * Return user input and initialize the status of the description
@@ -19,7 +19,7 @@ public class event extends function{
      * @param isExit      The boolean value if the exit condition is true.
      * @param description The task description/command from user.
      */
-    public event(boolean isExit, String description) {
+    public Event(boolean isExit, String description) {
         super(isExit, description);
     }
 
@@ -33,7 +33,7 @@ public class event extends function{
     }
 
     @Override
-    public void exe(TodoList todoList, ui ui, save storage) throws java.lang.Exception {
+    public void exe(TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
         if (description.substring(5).equals(empty)) {
             throw new Exception("The description of event cannot be empty.");
         } else if (!description.contains("at")) {

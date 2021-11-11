@@ -1,12 +1,12 @@
-package project.TextContent;
+package project.textContent;
 
 import project.functions.TodoList;
-import project.functions.function;
-import project.storage.save;
-import project.ui.ui;
+import project.functions.Function;
+import project.storage.Save;
+import project.ui.Ui;
 
 public class
-exit extends function {
+Exit extends Function {
 
     /**
      * Return user input and initialize the status of the description
@@ -14,11 +14,11 @@ exit extends function {
      * @param isExit      The boolean value if the exit condition is true.
      * @param description The task description/command from user.
      */
-    public exit(boolean isExit, String description) {
+    public Exit(boolean isExit, String description) {
         super(isExit, description);
     }
 
-    public void exe(TodoList todoList, ui ui, save storage) {
-        ui.exitMessage();
+    public void exe(TodoList todoList, Ui ui, Save storage) {
+        ui.byeBye();
     }
 }

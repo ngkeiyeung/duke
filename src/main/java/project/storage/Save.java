@@ -5,7 +5,7 @@ import project.functions.Events;
 import project.functions.Task;
 import project.functions.TodoList;
 import project.functions.Todos;
-import project.Exception.Exception;
+import project.exception.Exception;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.format.DateTimeParseException;
 
-public class save {
+public class Save {
 
     private static File file;
     private static Scanner scan;
@@ -25,7 +25,7 @@ public class save {
     private static String empty = "";
     private static String dateTimeFormat = "DD/MM/YYYY HHmm";
 
-    public save(String filePath){
+    public Save(String filePath){
         try{
             this.filePath = filePath;
             this.file = new File(filePath);

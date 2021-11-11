@@ -1,34 +1,34 @@
 package project.parser;
 
-import project.TextContent.*;
-import project.functions.function;
+import project.textContent.*;
+import project.functions.Function;
 
 
-public class parser {
-    public static function Parser(String input) throws Exception {
+public class Parser {
+    public static Function Parser(String input) throws Exception {
         String command;
         String commandList = input.split(" ")[0];
         command = commandList.toLowerCase();
 
         switch(command){
             case "add" :
-                return new todo(false, input);
+                return new Todo(false, input);
             case "event":
-                return new event(false, input);
+                return new Event(false, input);
             case "deadline" :
-                return new deadline(false, input);
+                return new Deadline(false, input);
             case "done":
-                return new completed(false, input);
+                return new Completed(false, input);
             case "bye" :
-                return new exit(false, input);
+                return new Exit(false, input);
             case "delete":
-                return new delete(false, input);
+                return new Delete(false, input);
             case "find" :
-                return new find(false, input);
+                return new Find(false, input);
             case "list" :
-                return new list(false, input);
+                return new List(false, input);
             case "sort":
-                return new sort(false, input);
+                return new Sort(false, input);
             default:
                 throw new Exception("The command is invalid, please try again!\n"
                         + "command '" + "add" + "' " + "to add new task\n"

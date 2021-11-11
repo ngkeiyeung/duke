@@ -1,21 +1,21 @@
-package project.TextContent;
+package project.textContent;
 
 import project.functions.Deadlines;
-import project.functions.function;
+import project.functions.Function;
 import project.functions.TodoList;
-import project.ui.ui;
-import project.storage.save;
-import project.Exception.Exception;
+import project.ui.Ui;
+import project.storage.Save;
+import project.exception.Exception;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 
-public class deadline extends function{
+public class Deadline extends Function {
     public Deadlines deadline;
 
-    public deadline(boolean isExit, String description) {
+    public Deadline(boolean isExit, String description) {
         super(isExit, description);
     }
 
@@ -29,7 +29,7 @@ public class deadline extends function{
     }
 
     @Override
-    public void exe (TodoList todoList, ui ui, save storage) throws java.lang.Exception {
+    public void exe (TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
 
         if (description.substring(8).equals(empty)) {
             throw new Exception("The deadline cannot be null. Please re-enter the deadline");

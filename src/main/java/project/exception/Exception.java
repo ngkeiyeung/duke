@@ -1,4 +1,4 @@
-package project.Exception;
+package project.exception;
 
 public class Exception extends java.lang.Exception {
 

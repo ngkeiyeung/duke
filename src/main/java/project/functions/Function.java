@@ -1,11 +1,11 @@
 package project.functions;
 
-import project.storage.save;
-import project.ui.ui;
+import project.storage.Save;
+import project.ui.Ui;
 
 import java.io.IOException;
 
-public abstract class function {
+public class Function {
     public boolean isExit;
     public String description;
     public String empty = "";
@@ -18,19 +18,11 @@ public abstract class function {
      * @param isExit      The boolean value if the exit condition is true.
      * @param description The task description/command from user.
      */
-    public function(boolean isExit, String description) {
+    public Function(boolean isExit, String description) {
         this.isExit = isExit;
         this.description = description;
     }
 
-
-    public String empty(String empty) {
-        return this.empty = empty;
-    }
-
-    public int i(int i) {
-        return this.i = i;
-    }
     /**
      * to decide true or false
      *
@@ -49,7 +41,7 @@ public abstract class function {
      * @throws Exception
      * @throws IOException
      */
-    public void exe(TodoList todoList, ui ui, save storage) throws Exception {
+    public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
         throw new Exception("The function was not found. Please try again!");
     }
 

@@ -1,13 +1,12 @@
-package project.TextContent;
+package project.textContent;
 
-import project.Duke;
-import project.Exception.Exception;
+import project.exception.Exception;
 import project.functions.TodoList;
-import project.functions.function;
-import project.storage.save;
-import project.ui.ui;
+import project.functions.Function;
+import project.storage.Save;
+import project.ui.Ui;
 
-public class delete extends function {
+public class Delete extends Function {
 
     /**
      * Return user input and initialize the status of the description
@@ -15,18 +14,18 @@ public class delete extends function {
      * @param isExit      The boolean value if the exit condition is true.
      * @param description The task description/command from user.
      */
-    public delete(boolean isExit, String description) {
+    public Delete(boolean isExit, String description) {
         super(isExit, description);
     }
 
-    public void exe(TodoList todoList, ui ui, save storage) throws java.lang.Exception {
+    public void exe(TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
         if(description.substring(7).equals(empty)){
             throw new Exception("Which task to delete?");
         }
         i = Integer.parseInt(description.substring(7));
         i--;
 
-        ui.outputdisplay("Noted. I've removed this task:\n"
+        ui.outputDisplay("Noted. I've removed this task:\n"
                 + "\t"
                 + todoList.getList(i).getTaskDescription());
         todoList.toDelete(i);

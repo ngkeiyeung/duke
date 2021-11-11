@@ -1,24 +1,24 @@
-package project.TextContent;
+package project.textContent;
 
 import project.functions.TodoList;
 import project.functions.Todos;
-import project.functions.function;
-import project.storage.save;
-import project.ui.ui;
+import project.functions.Function;
+import project.storage.Save;
+import project.ui.Ui;
 
-public class todo extends function {
+public class Todo extends Function {
     /**
      * Return user input and initialize the status of the description
      *
      * @param isExit      The boolean value if the exit condition is true.
      * @param description The task description/command from user.
      */
-    public todo(boolean isExit, String description) {
+    public Todo(boolean isExit, String description) {
         super(isExit, description);
     }
 
     @Override
-    public void exe(TodoList todoList, ui ui, save storage) throws Exception{
+    public void exe(TodoList todoList, Ui ui, Save storage) throws Exception{
         if(keyword(4).equals(empty)){
             throw new Exception("The description of task cannot be empty. please try again!");
         }
