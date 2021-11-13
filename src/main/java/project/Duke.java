@@ -10,7 +10,6 @@ public class Duke {
     private Ui ui;
     private Save save;
     private TodoList todoList;
-    private boolean isExit = true;
 
     public static void main(String[] args) {
         new Duke("data/TodoList.txt").runningProgram();

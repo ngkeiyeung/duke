@@ -2,11 +2,9 @@ package project.textContent;
 
 import project.functions.Function;
 import project.functions.TodoList;
-import project.functions.Todos;
 import project.storage.Save;
 import project.ui.Ui;
 
-import static java.lang.System.out;
 
 public class Help  extends Function {
     /**
@@ -19,9 +17,10 @@ public class Help  extends Function {
         super(isExit, description);
     }
 
+    @Override
     public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
 
-        if (todoList.length() == 0) {
+        if (TodoList.length() == 0) {
             throw new Exception("Type wrongly, please try it again!");
         }
         ui.outputDisplay("Here is the command:"

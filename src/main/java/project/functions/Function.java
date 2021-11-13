@@ -3,8 +3,6 @@ package project.functions;
 import project.storage.Save;
 import project.ui.Ui;
 
-import java.io.IOException;
-
 public class Function {
     public boolean isExit;
     public String description;
@@ -26,7 +24,7 @@ public class Function {
     /**
      * to decide true or false
      *
-     * @return boolean
+     * @return boolean the function will be activated when isExit is true.
      */
     public boolean isExit() {
         return isExit;
@@ -35,18 +33,22 @@ public class Function {
     /**
      * To give a warning message that if the function does not exist.
      *
-     * @param todoList
-     * @param ui
-     * @param storage
-     * @throws Exception
-     * @throws IOException
+     * @param todoList to load the todolist
+     * @param ui connect to the UI interface GUI
+     * @param storage to load the todolist file from the system
+     * @throws Exception To display the wrong function error message
      */
     public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
         throw new Exception("The function was not found. Please try again!");
     }
 
+    /**
+     * To provides coefficients for listing functions as well as finding lists
+     *
+     * @param word the input from the user
+     * @return String for list index, and list function
+     */
     public String keyword(int word) {
-        String keyword = description.substring(word);
-        return keyword;
+        return description.substring(word);
     }
 }

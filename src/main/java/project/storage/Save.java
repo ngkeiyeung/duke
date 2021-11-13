@@ -22,13 +22,18 @@ public class Save {
     private static File file;
     private static Scanner scan;
     private static String filePath;
-    private static String empty = "";
-    private static String dateTimeFormat = "DD/MM/YYYY HHmm";
+    private static final String empty = "";
+    private static final String dateTimeFormat = "DD/MM/YYYY HHmm";
 
+    /**
+     * To create a text file if there is no historical data
+     *
+     * @param filePath the folder direction of the todolist.txt
+     */
     public Save(String filePath){
         try{
-            this.filePath = filePath;
-            this.file = new File(filePath);
+            Save.filePath = filePath;
+            file = new File(filePath);
             scan = new Scanner(file);
         } catch (FileNotFoundException e) {
             try{
@@ -40,20 +45,33 @@ public class Save {
         }
     }
 
+    /**
+     * To define the status of the task completion
+     *
+     * @param status true or false.
+     * @return boolean The status of the task completion
+     */
     public boolean status(boolean status){
-        boolean isDone = status;
-        if (isDone) {
-            return true;
-        } else {
-            return false;
-        }
+        return status;
     }
 
+    /**
+     * To get the date and time of task
+     *
+     * @param time The data dn time for each of task
+     * @return String The day and time of the task
+     */
     public String dateFormat(LocalDateTime time) {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);
         return time.format(dateFormat);
     }
 
+    /**
+     * To convert the time format as string format
+     *
+     * @return String the task date and time
+     * @throws Exception when the input is not type of the data and time format such as DD/MM/YYYY HHmm
+     */
     public LocalDateTime stringFormat(String date) throws Exception {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimeFormat);
@@ -63,7 +81,10 @@ public class Save {
         }
     }
 
-
+    /**
+     * Save the todolist when interactive with user
+     *
+     */
     public void saveFile() {
         try{
             FileWriter fw = new FileWriter(filePath);
@@ -83,23 +104,24 @@ public class Save {
                         taskDate = dateFormat(((Events) task).eventTime);
                     } else if (task instanceof Deadlines) {
                         inputCommand = "D";
-                        taskDate = dateFormat(((Deadlines) task).deadlineTime);
+                        taskDate = dateFormat(task.deadlineTime);
                     }
                 }
                 boolean b = status(task.isCompleted);
                 int boolToInt = b ? 1 : 0;
 
 
+                assert taskDate != null;
                 if (taskDate.equals(empty)) {
                     fw.write(inputCommand
                             + " | "
-                            + Integer.toString(boolToInt)
+                            + boolToInt
                             + " | "
                             + TodoList.getList(i).description
                             + "\n");
                 } else {fw.write(inputCommand
                         + " | "
-                        + Integer.toString(boolToInt)
+                        + boolToInt
                         + " | "
                         + TodoList.getList(i).description
                         + " | "
@@ -115,12 +137,22 @@ public class Save {
 
     }
 
+    /**
+     * To check the existing todolist text file
+     *
+     * @param filePath Check if there are files in the storage folder
+     * @return boolean if it is false,will create a new file
+     */
     public static boolean checkFileExists(File filePath){
-        if (filePath.isFile() || filePath.exists() || filePath.length()>0){
-            return true;
-        } else { return false;}
+        return filePath.isFile() || filePath.exists() || filePath.length() > 0;
     }
 
+    /**
+     * To load the todolist.txt from storage folder
+     *
+     * @return ArrayList todolist as Array format
+     * @throws Exception if there is no existing file inside the storage folder
+     */
     public ArrayList<Task> loadFile() throws Exception {
         ArrayList<Task> taskArrayList = new ArrayList<>();
         if(!checkFileExists(file)) {

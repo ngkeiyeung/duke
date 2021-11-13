@@ -17,6 +17,14 @@ public class Completed extends Function {
         super(isExit, description);
     }
 
+    /**
+     * To mark todolist as completed status.
+     *
+     * @param todoList the todolist in the system
+     * @param ui connect to the UI interface GUI
+     * @param storage to load the todolist file from the system
+     * @throws Exception To handle the error code if function incorrect
+     */
     public void exe(TodoList todoList, Ui ui, Save storage) throws Exception{
         if(keyword(4).equals(empty)){
             throw new Exception("The Task cannot be done. Please re-enter the task.");
@@ -25,9 +33,9 @@ public class Completed extends Function {
         i = Integer.parseInt(keyword(5));
         i--;
 
-        todoList.getList(i).markCompleted();
+        TodoList.getList(i).markCompleted();
         ui.outputDisplay("Nice! I have marked this task as done:\n"
-                + todoList.getList(i).getTaskDescription());
+                + TodoList.getList(i).getTaskDescription());
         storage.saveFile();
     }
 

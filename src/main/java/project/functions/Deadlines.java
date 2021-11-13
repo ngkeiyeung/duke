@@ -6,14 +6,11 @@ import java.time.format.DateTimeFormatter;
 
 public class Deadlines extends Task {
 
-    private String deleted = "[D]";
-
-
     /**
      * The purpose of new task description is
      * Initializing the new task and mark the progress as incomplete.
      *
-     * @param description
+     * @param description Task description
      */
     public Deadlines(String description, LocalDateTime deadlineTime) {
         super(description);
@@ -23,27 +20,19 @@ public class Deadlines extends Task {
     /**
      * Return the deadline of the task
      *
-     * @return String
+     * @return String task description
      */
     @Override
     public String getTaskDescription() {
-        return deleted + getTaskDescription();
-    }
-
-    /**
-     * To get the date and time
-     *
-     * @return String
-     */
-    public LocalDateTime deadlineTime() {
-        return this.deadlineTime;
+        String deleted = "[D]";
+        return deleted + getTaskDescription() + " by the date/time: " + dateFormat(deadlineTime);
     }
 
     /**
      * To convert date and time as string
      *
-     * @param time
-     * @return String
+     * @param time tasks/ events data and time
+     * @return String convert from other format to time format
      */
     public String dateFormat(LocalDateTime time) {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(dateTimeFormat);

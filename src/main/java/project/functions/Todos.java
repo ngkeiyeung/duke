@@ -5,7 +5,7 @@ public class Todos extends Task {
     /**
      * Creating a todolist from the input
      *
-     * @param description
+     * @param description tasks/ events
      */
     public Todos (String description) {
         super(description);
@@ -14,7 +14,7 @@ public class Todos extends Task {
     /**
      * return a status of the task
      *
-     * @return String
+     * @return String return the status of the todolist
      */
     @Override
     public String getTaskDescription() {

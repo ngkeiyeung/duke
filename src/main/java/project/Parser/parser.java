@@ -5,6 +5,12 @@ import project.functions.Function;
 
 
 public class Parser {
+    /**
+     * According to the user input, to activate the todolist function.
+     *
+     * @param input todolist command
+     * @return different functions
+     */
     public static Function Parser(String input) throws Exception {
         String command;
         String commandList = input.split(" ")[0];

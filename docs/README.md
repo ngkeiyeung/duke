@@ -2,27 +2,13 @@
 
 ## Features 
 
-### Feature-ABC
+### Todo List
 
-Description of the feature.
+To add / edit todolist/ event
 
-### Feature-XYZ
+### GUI
 
-Description of the feature.
-
-## Usage
-
-### `Keyword` - Describe action
-
-Describe the action and its outcome.
-
-Example of usage: 
-
-`keyword (optional arguments)`
-
-Expected outcome:
-
-Description of the outcome.
+Create GUI with user.
 
 ```
 expected output

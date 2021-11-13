@@ -18,7 +18,8 @@ public class Delete extends Function {
         super(isExit, description);
     }
 
-    public void exe(TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
+    @Override
+    public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
         if(description.substring(7).equals(empty)){
             throw new Exception("Which task to delete?");
         }
@@ -27,7 +28,7 @@ public class Delete extends Function {
 
         ui.outputDisplay("Noted. I've removed this task:\n"
                 + "\t"
-                + todoList.getList(i).getTaskDescription());
+                + TodoList.getList(i).getTaskDescription());
         todoList.toDelete(i);
         storage.saveFile();
     }

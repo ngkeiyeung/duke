@@ -31,8 +31,8 @@ public class Find extends Function {
             throw new Exception("The task was not found, please try again!");
         }
 
-        for (int j = todoList.length() - 1; j >= 0; j--) {
-            Task task = todoList.getList(j);
+        for (int i = TodoList.length() - 1; i >= 0; i--) {
+            Task task = TodoList.getList(i);
             if (task.getTaskDescription().contains(str)) {
                 matchList.add(task.getTaskDescription());
                 match = true;

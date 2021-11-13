@@ -25,7 +25,7 @@ public class Lists extends Function {
 
     public String listDetail(TodoList todoList) {
         List<String> item = new ArrayList<>();
-        for (int i = 0; i<todoList.length(); i++) {
+        for (int i = 0; i< todoList.length(); i++) {
             item.add(todoList.getList(i).getTaskDescription());
         }
         return getNumber(item);
@@ -40,12 +40,13 @@ public class Lists extends Function {
         int number = 1;
         String item = "";
         for (String list : lists){
-            item += "\n" + getTodoList(number, list);
+            item = item + ("\n" + getTodoList(number, list));
             number++;
         }
         return item;
     }
 
+    @Override
     public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
         if (todoList.length() == 0) {
             throw new Exception("There is no todo list, please try again!");

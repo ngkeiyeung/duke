@@ -15,6 +15,12 @@ import java.time.format.DateTimeParseException;
 public class Deadline extends Function {
     public Deadlines deadline;
 
+    /**
+     * Return user input and activate deadline function
+     *
+     * @param isExit The boolean value if the exit condition is true.
+     * @param description task description
+     */
     public Deadline(boolean isExit, String description) {
         super(isExit, description);
     }
@@ -29,7 +35,8 @@ public class Deadline extends Function {
     }
 
     @Override
-    public void exe (TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
+
+    public void exe (TodoList todoList, Ui ui, Save storage) throws Exception {
 
         if (description.substring(8).equals(empty)) {
             throw new Exception("The deadline cannot be null. Please re-enter the deadline");
@@ -38,13 +45,13 @@ public class Deadline extends Function {
         }
 
         deadline = new Deadlines(description.substring(9, description.indexOf("by") - 1), stringFormat(description.substring(description.indexOf("by") + 3)));
-        todoList.setTodoList(deadline);
+        TodoList.setTodoList(deadline);
 
-        assert todoList.length() > 0;
+        assert TodoList.length() > 0;
         ui.outputDisplay("Got it. I've added this task:\n"
                 + deadline.getTaskDescription()
                 + "\nNow you have "
-                + todoList.length()
+                + TodoList.length()
                 + " in task list.");
         storage.saveFile();
     }

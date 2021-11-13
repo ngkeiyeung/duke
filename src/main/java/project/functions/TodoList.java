@@ -8,7 +8,7 @@ public class TodoList {
     /**
      * To get the size of task
      *
-     * @return int
+     * @return int length of the Todolist
      */
     public static int length() {
         return todoList.size();
@@ -17,29 +17,23 @@ public class TodoList {
     /**
      * Creating and initializing a new todoList
      *
-     * @return array
      */
     public TodoList() {
-        this.todoList = new ArrayList<>();
+        todoList = new ArrayList<>();
     }
-
-
 
     /**
      * Creating a specified type of new todolist
      *
-     * @param todo
-     * @return String
      */
     public TodoList(ArrayList<Task> todo) {
-        this.todoList = todo;
+        todoList = todo;
     }
 
     /**
      * to get a todolist
      *
-     * @param description
-     * @return String
+     * @return String The index of the todolist e.g: 1,2,3,4,5...
      */
     public static Task getList(int description) {
         return todoList.get(description);
@@ -48,8 +42,7 @@ public class TodoList {
     /**
      * Creating the new scope of todoList
      *
-     * @param description       Adding the new task into the todoList
-     * @return String
+     * @param description  Adding the new task into the todoList
      */
     public static void setTodoList(Task description) {
         todoList.add(description);
@@ -58,11 +51,9 @@ public class TodoList {
     /**
      * To get a todolist that will be removed
      *
-     * @param description
-     * @return String
      */
-    public Task toDelete(int description) {
-        return todoList.remove(description);
+    public void toDelete(int description) {
+        todoList.remove(description);
     }
 
 

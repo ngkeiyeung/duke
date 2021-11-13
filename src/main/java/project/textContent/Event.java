@@ -23,6 +23,13 @@ public class Event extends Function {
         super(isExit, description);
     }
 
+    /**
+     * To convert date and time format to String format
+     *
+     * @param date the event data and time
+     * @return String date and time for the event
+     * @throws Exception Error message if it is not format
+     */
     public LocalDateTime stringFormat(String date) throws Exception {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateTimeFormat);
@@ -33,7 +40,7 @@ public class Event extends Function {
     }
 
     @Override
-    public void exe(TodoList todoList, Ui ui, Save storage) throws java.lang.Exception {
+    public void exe(TodoList todoList, Ui ui, Save storage) throws Exception {
         if (description.substring(5).equals(empty)) {
             throw new Exception("The description of event cannot be empty.");
         } else if (!description.contains("at")) {
@@ -41,13 +48,13 @@ public class Event extends Function {
         }
 
         events = new Events(description.substring(6, description.indexOf("at") - 1), stringFormat(description.substring(description.indexOf("at") + 3)));
-        todoList.setTodoList(events);
+        TodoList.setTodoList(events);
 
-        assert todoList.length() > 0;
+        assert TodoList.length() > 0;
         ui.outputDisplay("Got it. I've added this task:\n"
                 + events.getTaskDescription()
                 + "\nNow you have "
-                + todoList.length()
+                + TodoList.length()
                 + " in task list.");
         storage.saveFile();
     }
