@@ -6,6 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class dukeTest {
 @Test
-    public void dummyTest(){ assertEquals(1, 1);}
+    public void dummyTest(){ assertEquals(888, 888);}
 }
 

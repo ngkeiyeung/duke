@@ -26,9 +26,9 @@ public class Parser {
             case "find" :
                 return new Find(false, input);
             case "list" :
-                return new List(false, input);
-            case "sort":
-                return new Sort(false, input);
+                return new Lists(false, input);
+            case "help":
+                return new Help(false, input);
             default:
                 throw new Exception("The command is invalid, please try again!\n"
                         + "command '" + "add" + "' " + "to add new task\n"
@@ -38,7 +38,7 @@ public class Parser {
                         + "command '" + "delete" + "' " + "to delete the task or event\n"
                         + "command '" + "find" + "' " + "to find the task or event\n"
                         + "command '" + "event" + "' " + "to add new event\n"
-                        + "command '" + "sort" + "' " + "to sort the sort the deadlines chronologically\n"
+                        + "command '" + "Help" + "' " + "to view the help page\n"
                         + "command '" + "bye" + "' " + "to exit the program\n");
         }
     }

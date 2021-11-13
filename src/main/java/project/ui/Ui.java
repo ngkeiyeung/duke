@@ -18,16 +18,6 @@ public class Ui {
                 + "|____/ \\__,_|_|\\_\\___|\n";
         out.println("Hello from\n" + logo);
 
-        out.println("Here is the command:"
-                + "command '" + "add" + "' " + "to add new task\n"
-                + "command '" + "event" + "' " + "to add new event\n"
-                + "command '" + "deadline" + "' " + "to add new deadline\n"
-                + "command '" + "done" + "' " + "to mark task or event as done\n"
-                + "command '" + "delete" + "' " + "to delete the task or event\n"
-                + "command '" + "find" + "' " + "to find the task or event\n"
-                + "command '" + "event" + "' " + "to add new event\n"
-                + "command '" + "sort" + "' " + "to sort the sort the deadlines chronologically\n"
-                + "command '" + "bye" + "' " + "to exit the program\n");
     }
 
     public Ui(){
@@ -72,4 +62,5 @@ public class Ui {
         }
         return manual;
     }
+
 }

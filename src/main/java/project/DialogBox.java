@@ -58,4 +58,10 @@ public class DialogBox extends HBox {
         db.flip();
         return db;
     }
+
+    public static DialogBox autoMessage(Image img) {
+        var db = new DialogBox("Hello, Good Day, Welcome to TodoList!", img);
+        db.flip();
+        return db;
+    }
 }

@@ -28,15 +28,6 @@ public class Events extends Task {
     }
 
     /**
-     * To get the date and time
-     *
-     * @return String
-     */
-    public LocalDateTime eventTime() {
-        return this.eventTime;
-    }
-
-    /**
      * To convert date and time as string
      *
      * @param time

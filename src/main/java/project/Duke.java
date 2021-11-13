@@ -1,11 +1,5 @@
 package project;
 
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import project.functions.Function;
 import project.functions.TodoList;
 import project.storage.Save;
@@ -18,12 +12,6 @@ public class Duke {
     private TodoList todoList;
     private boolean isExit = true;
 
-    private ScrollPane scrollPane;
-    private VBox dialogContainer;
-    private TextField userInput;
-    private Button sendButton;
-    private Scene scene;
-
     public static void main(String[] args) {
         new Duke("data/TodoList.txt").runningProgram();
 
@@ -34,16 +22,6 @@ public class Duke {
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
 
-        System.out.println("Here is the command:"
-                + "command '" + "add" + "' " + "to add new task\n"
-                + "command '" + "event" + "' " + "to add new event\n"
-                + "command '" + "deadline" + "' " + "to add new deadline\n"
-                + "command '" + "done" + "' " + "to mark task or event as done\n"
-                + "command '" + "delete" + "' " + "to delete the task or event\n"
-                + "command '" + "find" + "' " + "to find the task or event\n"
-                + "command '" + "event" + "' " + "to add new event\n"
-                + "command '" + "sort" + "' " + "to sort the sort the deadlines chronologically\n"
-                + "command '" + "bye" + "' " + "to exit the program\n");
     }
 
     public Duke(String filepath) {
@@ -60,6 +38,7 @@ public class Duke {
 
     public void runningProgram() {
         ui.welcome();
+        boolean isExit = false;
 
         while (isExit) {
             try {

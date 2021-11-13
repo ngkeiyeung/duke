@@ -64,7 +64,7 @@ public class Save {
     }
 
 
-    public void saveFile() throws Exception {
+    public void saveFile() {
         try{
             FileWriter fw = new FileWriter(filePath);
             int i = 0;
