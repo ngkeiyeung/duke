@@ -11,6 +11,11 @@ public class Duke {
     private Save save;
     private TodoList todoList;
 
+    /**
+     * main function to run the program
+     *
+     * @param args argument to provided by user to run the program
+     */
     public static void main(String[] args) {
         new Duke("data/TodoList.txt").runningProgram();
 
@@ -23,6 +28,12 @@ public class Duke {
 
     }
 
+    /**
+     * Display the welcome message and create the duke text file
+     * and initialize withe function, user interface and save files
+     *
+     * @param filepath storage file
+     */
     public Duke(String filepath) {
         ui = new Ui();
         save = new Save(filepath);
@@ -35,6 +46,9 @@ public class Duke {
         }
     }
 
+    /**
+     *  running the programming and display the specific output
+     */
     public void runningProgram() {
         ui.welcome();
         boolean isExit = false;
@@ -51,6 +65,12 @@ public class Duke {
         }
     }
 
+    /**
+     * get user input
+     *
+     * @param input user input
+     * @return String user input
+     */
     public String getResponse(String input) {
         try {
             Function command = Parser.Parser(input);

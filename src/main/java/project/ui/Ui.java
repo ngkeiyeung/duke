@@ -10,6 +10,10 @@ public class Ui {
     private Scanner input;
     private String output;
 
+    /**
+     * Shows welcome message
+     *
+     */
     public static void welcome(){
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -24,6 +28,11 @@ public class Ui {
         this(System.in);
     }
 
+    /**
+     * Represents a stream of the input, which is an abstract class
+     *
+     * @param input user input
+     */
     public Ui(InputStream input) {
         this.input = new Scanner(input);
     }
@@ -37,24 +46,46 @@ public class Ui {
 
     /**
      * print error message
-     * @param errorMessage
+     *
+     * @param errorMessage Error message
      */
     public String errorMsg(String errorMessage) {
         return errorMessage + "\n" + "Error!!!!\n"  + "Please try again\n";
     }
 
+    /**
+     * output message
+     *
+     * @return output message
+     */
     public String output(){
         return this.output;
     }
 
+    /**
+     * Display output message
+     *
+     * @param output display the out message
+     */
     public void outputDisplay(String output) {
         this.output = output;
     }
 
+    /**
+     * check the input, make sure the input is not empty
+     *
+     * @param input check input message
+     * @return boolean true or false
+     */
     public static boolean checkInput(String input) {
         return input.trim().isEmpty();
     }
 
+    /**
+     * to check the user input, and display specific functions
+     *
+     * @return String user input
+     */
     public String userManual() {
         String manual = input.nextLine();
         while (checkInput(manual)) {
